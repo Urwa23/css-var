@@ -1,0 +1,30 @@
+*{
+    text-align: center;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+h2{
+    margin-top: 50px;
+    color: darkslateblue;
+}
+.controls{
+    margin-bottom: 60px;
+}
+:root{
+    --base:#F08080;
+    --spacing:10px;
+    --blur:5px;
+    --font-size:25px;
+}
+img{
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+}
+.h1{
+    color:var(--base);
+    font-size: var(--font-size);
+}
+
+

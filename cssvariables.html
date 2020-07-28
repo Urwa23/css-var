@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cssvariables.css">
+    <title>Document</title>
+</head>
+<body>
+    <h2>HOW TO CONTROL CSS THROUGH <span class="h1">JS</span></h2>
+    <div class="controls">
+        <label for="spacing">Spacing:</label>
+        <input type="range" name="spacing" min="10" max="200" value="10" data-sizing="px" >
+        <label for="blur">Blur:</label>
+        <input type="range" name="blur" min="0" max="25" value="5" data-sizing="px" >
+        <label for="base">Base Color:</label>
+        <input type="color" name="base" value="#F08080">
+        <label for="font-size">Font-size:</label>
+        <input type="number" name="font-size" min="10" max="100" value="25" data-sizing="px">
+        
+    </div>
+    <img src="C:\Users\Fakiha Maqsood\Desktop\html2\one.jpg" alt="a scenery">
+    <script>
+        const inputs=document.querySelectorAll(".controls input");
+    console.log(inputs);
+    const updatevalue=function(){
+          console.log(this);
+          const suffix=this.dataset.sizing || '';
+          console.log(suffix);
+          document.documentElement.style.setProperty(`--${this.name}`,this.value+suffix);
+        }
+        inputs.forEach(input=>input.addEventListener('change',updatevalue));
+        inputs.forEach(input=>input.addEventListener('mouseover',updatevalue));
+        
+    </script>
+
+</body>
+</html>
